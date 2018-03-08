@@ -9,9 +9,10 @@
  *     TreeNode(int x) { val = x; }
  * }
  */
-class BinaryString {
-    static StringBuilder sb = new StringBuilder();
+class BinaryTreeString {
+    static StringBuilder sb;
     public String tree2str(TreeNode t) {
+        sb = new StringBuilder();
         if(t == null){
             return "";
         }
@@ -22,10 +23,17 @@ class BinaryString {
         if(t == null){
             return;
         }
-        sb.append("(");
         sb.append(t.val);
+        if(t.left == null && t.right == null){
+            return;
+        }
+        sb.append("(");
         CreateString(t.left);
         sb.append(")");
-        CreateString(t.right);
+        if(t.right != null){
+            sb.append("(");
+            CreateString(t.right);
+            sb.append(")");
+        }
     }
 }
