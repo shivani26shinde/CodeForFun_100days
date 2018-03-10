@@ -20,9 +20,35 @@ class IsSubsequence {
                 else{
                     array[i][j] = Math.max(array[i-1][j], array[i][j-1]);
                 }
+				if(array[i][j] == s.length()){
+					return true;
+				}
             }
         }   
         if(array[s.length()][t.length()] == s.length()){
+            return true;
+        }
+        return false;
+    }
+}
+
+class IsSubsequenceOptimal {
+    public boolean isSubsequence(String s, String t) {
+        if(s.length() == 0 && t.length() == 0){
+            return true;
+        }
+        int start1 = 0;
+        int start2 = 0;
+        while(start1 < s.length() && start2 < t.length()){
+            if(s.charAt(start1) == t.charAt(start2)){
+                start1++;
+                start2++;
+            }
+            else{
+                start2++;
+            }
+        }
+        if(start1 == s.length()){
             return true;
         }
         return false;
