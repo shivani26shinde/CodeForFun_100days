@@ -1,4 +1,4 @@
-// LeetCode
+// LeetCode --> Q.520 --> Detect Capital
 
 class DetectCapital {
     public boolean detectCapitalUse(String word) {
