@@ -17,7 +17,7 @@ class BeutifulArrangement {
         for(int i=start;i<N;i++){
             if(array[i]%(start+1) == 0 || (start+1)%array[i] == 0 || array[start]%(i+1) == 0 || (i+1)%array[start] == 0){
                 array = Swap(array,i,start);
-                count = Count(i+1,array,N,count);
+                count = Count(start+1,array,N,count);
                 array = Swap(array,i,start);
             }
         }
