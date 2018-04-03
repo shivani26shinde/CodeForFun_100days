@@ -1,4 +1,6 @@
-class Solution {
+// LeetCode --> Q.498 --> Diagonal Traverse
+
+class DiagonalTraverse {
     public int[] findDiagonalOrder(int[][] matrix) {
         int total = matrix.length * matrix[0].length;
         int[] array = new int[total];
