@@ -1,4 +1,4 @@
-LeetCode --> Virtual Contest
+// LeetCode --> Virtual Contest --> Integer Replacement
 
 class IntegerReplacement {
     public int integerReplacement(int n) {

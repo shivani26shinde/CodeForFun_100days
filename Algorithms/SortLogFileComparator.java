@@ -49,7 +49,7 @@ class CustomCompare implements Comparator<Line>{
 
     @Override
     public int compare(Line o1, Line o2) {
-        System.out.println(o1.getValue()+"  "+o2.getValue());
+        //System.out.println(o1.getValue()+"  "+o2.getValue());
         if(o1.getValue().matches(o2.getValue())){
             return o1.getId().compareTo(o2.getId());
         }
