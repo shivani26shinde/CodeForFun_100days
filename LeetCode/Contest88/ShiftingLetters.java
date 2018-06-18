@@ -10,21 +10,17 @@ class ShiftingLetters {
             mapNum.put(c,num);
             num++;
         }
-        for(int i=0;i<shifts.length;i++){
-            int shift = shifts[i];
-            StringBuilder sb = new StringBuilder();
-            for(int j=0;j<i+1;j++){
-                int val = (mapNum.get(S.charAt(j))+shift)%26;
-                char c = map.get(val);
-                sb.append(c);
+        char[] myChar = S.toCharArray();
+        for(int i=0;i<myChar.length;i++){
+            long sum = 0;
+            for(int j=i;j<shifts.length;j++){
+                sum = sum+shifts[j];     
             }
-            if(i+1<S.length()){
-                S = sb.toString() + S.substring(i+1,S.length());
-            }
-            else{
-                S = sb.toString();
-            }
+            long value = (long) (mapNum.get(myChar[i])) + sum;
+            int val = (int) (value%26);
+            myChar[i] = map.get(val);            
         }
+        S = String.valueOf(myChar);
         return S;
     }
 }
